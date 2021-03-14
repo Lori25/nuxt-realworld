@@ -1,0 +1,51 @@
+[
+  {
+    "path": "/",
+    "component": "/Users/xiangliru/01-class/personal-project/nuxt-realword/pages/layout",
+    "children": [
+      {
+        "path": "",
+        "name": "home",
+        "component": "/Users/xiangliru/01-class/personal-project/nuxt-realword/pages/home",
+        "_name": "_83454866"
+      },
+      {
+        "path": "/login",
+        "name": "login",
+        "component": "/Users/xiangliru/01-class/personal-project/nuxt-realword/pages/login",
+        "_name": "_0d86663b"
+      },
+      {
+        "path": "/register",
+        "name": "register",
+        "component": "/Users/xiangliru/01-class/personal-project/nuxt-realword/pages/login",
+        "_name": "_0d86663b"
+      },
+      {
+        "path": "/profile/:username",
+        "name": "profile",
+        "component": "/Users/xiangliru/01-class/personal-project/nuxt-realword/pages/profile",
+        "_name": "_c2a6d80a"
+      },
+      {
+        "path": "/settings",
+        "name": "settings",
+        "component": "/Users/xiangliru/01-class/personal-project/nuxt-realword/pages/settings",
+        "_name": "_6fb407de"
+      },
+      {
+        "path": "/editor",
+        "name": "editor",
+        "component": "/Users/xiangliru/01-class/personal-project/nuxt-realword/pages/editor",
+        "_name": "_d28af64a"
+      },
+      {
+        "path": "/article/:slug",
+        "name": "article",
+        "component": "/Users/xiangliru/01-class/personal-project/nuxt-realword/pages/article",
+        "_name": "_f5125170"
+      }
+    ],
+    "_name": "_baed42d0"
+  }
+]
