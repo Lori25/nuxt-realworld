@@ -52,9 +52,12 @@ jobs:
         username: ${{ secrets.USERNAME }}
         password: ${{ secrets.PASSWORD }}
         port: ${{ secrets.PORT }}
+        # export NVM_DIR=~/.nvm
+        # source ~/.nvm/nvm.sh
         script: |
           cd /home/ubuntu/realworld-nuxt
           wget https://github.com/Lori25/nuxt-realworld/releases/latest/download/release.tgz -O release.tgz
           tar zxvf release.tgz
+          source /etc/profile
           npm install --production
           pm2 reload pm2.config.json
