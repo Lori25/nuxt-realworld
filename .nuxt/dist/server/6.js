@@ -1,21 +1,57 @@
 exports.ids = [6];
 exports.modules = {
 
-/***/ 29:
+/***/ 28:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return login; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return register; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "c", function() { return update; });
+/* harmony import */ var _plugins_request__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(5);
+
+const login = data => {
+  return Object(_plugins_request__WEBPACK_IMPORTED_MODULE_0__[/* request */ "b"])({
+    method: 'POST',
+    url: '/api/users/login',
+    data
+  });
+};
+const register = data => {
+  return Object(_plugins_request__WEBPACK_IMPORTED_MODULE_0__[/* request */ "b"])({
+    method: 'POST',
+    url: '/api/users',
+    data
+  });
+};
+const update = data => {
+  return Object(_plugins_request__WEBPACK_IMPORTED_MODULE_0__[/* request */ "b"])({
+    method: 'PUT',
+    url: '/api/user',
+    data
+  });
+};
+
+/***/ }),
+
+/***/ 37:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 // ESM COMPAT FLAG
 __webpack_require__.r(__webpack_exports__);
 
-// CONCATENATED MODULE: ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./pages/profile/index.vue?vue&type=template&id=e2a48eba&scoped=true&
-var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{staticClass:"profile-page"},[_vm._ssrNode("<div class=\"user-info\" data-v-e2a48eba><div class=\"container\" data-v-e2a48eba><div class=\"row\" data-v-e2a48eba><div class=\"col-xs-12 col-md-10 offset-md-1\" data-v-e2a48eba><img src=\"http://i.imgur.com/Qr71crq.jpg\" class=\"user-img\" data-v-e2a48eba> <h4 data-v-e2a48eba>Eric Simons</h4> <p data-v-e2a48eba>\n            Cofounder @GoThinkster, lived in Aol's HQ for a few months, kinda\n            looks like Peeta from the Hunger Games\n          </p> <button class=\"btn btn-sm btn-outline-secondary action-btn\" data-v-e2a48eba><i class=\"ion-plus-round\" data-v-e2a48eba></i>\n              Follow Eric Simons\n          </button></div></div></div></div> <div class=\"container\" data-v-e2a48eba><div class=\"row\" data-v-e2a48eba><div class=\"col-xs-12 col-md-10 offset-md-1\" data-v-e2a48eba><div class=\"articles-toggle\" data-v-e2a48eba><ul class=\"nav nav-pills outline-active\" data-v-e2a48eba><li class=\"nav-item\" data-v-e2a48eba><a href class=\"nav-link active\" data-v-e2a48eba>My Articles</a></li> <li class=\"nav-item\" data-v-e2a48eba><a href class=\"nav-link\" data-v-e2a48eba>Favorited Articles</a></li></ul></div> <div class=\"article-preview\" data-v-e2a48eba><div class=\"article-meta\" data-v-e2a48eba><a href data-v-e2a48eba><img src=\"http://i.imgur.com/Qr71crq.jpg\" data-v-e2a48eba></a> <div class=\"info\" data-v-e2a48eba><a href class=\"author\" data-v-e2a48eba>Eric Simons</a> <span class=\"date\" data-v-e2a48eba>January 20th</span></div> <button class=\"btn btn-outline-primary btn-sm pull-xs-right\" data-v-e2a48eba><i class=\"ion-heart\" data-v-e2a48eba></i> 29\n            </button></div> <a href class=\"preview-link\" data-v-e2a48eba><h1 data-v-e2a48eba>How to build webapps that scale</h1> <p data-v-e2a48eba>This is the description for the post.</p> <span data-v-e2a48eba>Read more...</span></a></div> <div class=\"article-preview\" data-v-e2a48eba><div class=\"article-meta\" data-v-e2a48eba><a href data-v-e2a48eba><img src=\"http://i.imgur.com/N4VcUeJ.jpg\" data-v-e2a48eba></a> <div class=\"info\" data-v-e2a48eba><a href class=\"author\" data-v-e2a48eba>Albert Pai</a> <span class=\"date\" data-v-e2a48eba>January 20th</span></div> <button class=\"btn btn-outline-primary btn-sm pull-xs-right\" data-v-e2a48eba><i class=\"ion-heart\" data-v-e2a48eba></i> 32\n            </button></div> <a href class=\"preview-link\" data-v-e2a48eba><h1 data-v-e2a48eba>\n              The song you won't ever stop singing. No matter how hard you\n              try.\n            </h1> <p data-v-e2a48eba>This is the description for the post.</p> <span data-v-e2a48eba>Read more...</span> <ul class=\"tag-list\" data-v-e2a48eba><li class=\"tag-default tag-pill tag-outline\" data-v-e2a48eba>Music</li> <li class=\"tag-default tag-pill tag-outline\" data-v-e2a48eba>Song</li></ul></a></div></div></div></div>")])}
+// CONCATENATED MODULE: ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./pages/settings/index.vue?vue&type=template&id=0aa96f96&
+var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{staticClass:"settings-page"},[_vm._ssrNode("<div class=\"container page\"><div class=\"row\"><div class=\"col-md-6 offset-md-3 col-xs-12\"><h1 class=\"text-xs-center\">Your Settings</h1> <form><fieldset><fieldset class=\"form-group\"><input placeholder=\"URL of profile picture\""+(_vm._ssrAttr("value",(_vm.user.image)))+" class=\"form-control\"></fieldset> <fieldset class=\"form-group\"><input placeholder=\"Your Name\""+(_vm._ssrAttr("value",(_vm.user.username)))+" class=\"form-control form-control-lg\"></fieldset> <fieldset class=\"form-group\"><textarea rows=\"8\" placeholder=\"Short bio about you\" class=\"form-control form-control-lg\">"+_vm._ssrEscape(_vm._s(_vm.user.bio))+"</textarea></fieldset> <fieldset class=\"form-group\"><input placeholder=\"Email\""+(_vm._ssrAttr("value",(_vm.user.email)))+" class=\"form-control form-control-lg\"></fieldset> <fieldset class=\"form-group\"><input type=\"password\" placeholder=\"Password\""+(_vm._ssrAttr("value",(_vm.user.password)))+" class=\"form-control form-control-lg\"></fieldset> <button class=\"btn btn-lg btn-primary pull-xs-right\">\n              Update Settings\n            </button></fieldset></form> <hr> <button class=\"btn btn-outline-danger\">Or click here to logout.</button></div></div></div>")])}
 var staticRenderFns = []
 
 
-// CONCATENATED MODULE: ./pages/profile/index.vue?vue&type=template&id=e2a48eba&scoped=true&
+// CONCATENATED MODULE: ./pages/settings/index.vue?vue&type=template&id=0aa96f96&
 
-// CONCATENATED MODULE: ./node_modules/babel-loader/lib??ref--2-0!./node_modules/vue-loader/lib??vue-loader-options!./pages/profile/index.vue?vue&type=script&lang=js&
+// EXTERNAL MODULE: ./api/user.js
+var api_user = __webpack_require__(28);
+
+// CONCATENATED MODULE: ./node_modules/babel-loader/lib??ref--2-0!./node_modules/vue-loader/lib??vue-loader-options!./pages/settings/index.vue?vue&type=script&lang=js&
 //
 //
 //
@@ -75,73 +111,79 @@ var staticRenderFns = []
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-/* harmony default export */ var profilevue_type_script_lang_js_ = ({
+
+const Cookie =  false ? undefined : undefined;
+/* harmony default export */ var settingsvue_type_script_lang_js_ = ({
   middleware: 'authenticated',
-  name: "profile",
+  name: "SettingIndex",
 
   data() {
-    return {};
+    return {
+      user: {}
+    };
   },
 
-  components: {},
-  computed: {},
+  mounted() {
+    this.user = { ...this.$store.state.user
+    };
+  },
 
-  mounted() {},
+  methods: {
+    async updateUser() {
+      const {
+        data: result
+      } = await Object(api_user["c" /* update */])({
+        user: this.user
+      });
+      const {
+        user
+      } = result; // 保存用户登陆状态
 
-  methods: {}
+      this.$store.commit('setUser', user); // 数据持久化，刷新不归零
+
+      Cookie.set('user', user);
+      this.$router.push({
+        name: 'profile',
+        params: {
+          username: user.username
+        }
+      });
+    },
+
+    async logout() {
+      // 清除浏览器 cookie，及 store 保存的 user 信息，并重定向至首页
+      Cookie.remove('user');
+      this.$store.commit('setUser', null);
+      this.$router.push('/');
+    }
+
+  }
 });
-// CONCATENATED MODULE: ./pages/profile/index.vue?vue&type=script&lang=js&
- /* harmony default export */ var pages_profilevue_type_script_lang_js_ = (profilevue_type_script_lang_js_); 
+// CONCATENATED MODULE: ./pages/settings/index.vue?vue&type=script&lang=js&
+ /* harmony default export */ var pages_settingsvue_type_script_lang_js_ = (settingsvue_type_script_lang_js_); 
 // EXTERNAL MODULE: ./node_modules/vue-loader/lib/runtime/componentNormalizer.js
 var componentNormalizer = __webpack_require__(2);
 
-// CONCATENATED MODULE: ./pages/profile/index.vue
+// CONCATENATED MODULE: ./pages/settings/index.vue
 
 
 
-function injectStyles (context) {
-  
-  
-}
+
 
 /* normalize component */
 
 var component = Object(componentNormalizer["a" /* default */])(
-  pages_profilevue_type_script_lang_js_,
+  pages_settingsvue_type_script_lang_js_,
   render,
   staticRenderFns,
   false,
-  injectStyles,
-  "e2a48eba",
-  "487a4354"
+  null,
+  null,
+  "46573bae"
   
 )
 
-/* harmony default export */ var profile = __webpack_exports__["default"] = (component.exports);
+/* harmony default export */ var settings = __webpack_exports__["default"] = (component.exports);
 
 /***/ })
 

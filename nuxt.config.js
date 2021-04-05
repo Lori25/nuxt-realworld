@@ -1,5 +1,8 @@
 
 module.exports = {
+  head: {
+    title: 'RealWorld'
+  },
   router: {
     linkActiveClass: 'active',
     // 自定义路由表规则

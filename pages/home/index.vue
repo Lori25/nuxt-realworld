@@ -45,54 +45,7 @@
               </li>
             </ul>
           </div>
-
-          <div
-            class="article-preview"
-            v-for="article in articles"
-            :key="article.slug"
-          >
-            <div class="article-meta">
-              <nuxt-link :to="'/profile/' + article.author.username"
-                ><img src="http://i.imgur.com/Qr71crq.jpg"
-              /></nuxt-link>
-              <div class="info">
-                <nuxt-link
-                  class="author"
-                  :to="'/profile/' + article.author.username"
-                  >{{ article.author.username }}</nuxt-link
-                >
-                <span class="date">{{
-                  article.createdAt | date("MMM DD, YYYY")
-                }}</span>
-              </div>
-              <button
-                class="btn btn-outline-primary btn-sm pull-xs-right"
-                :class="{ active: article.favorited }"
-              >
-                <i class="ion-heart"></i> {{ article.favoritesCount }}
-              </button>
-            </div>
-            <nuxt-link
-              :to="{
-                name: 'article',
-                params: { slug: article.slug },
-              }"
-              class="preview-link"
-            >
-              <h1>{{ article.title }}</h1>
-              <p>{{ article.description }}</p>
-              <span>Read more...</span>
-              <ul class="tag-list">
-                <li
-                  class="tag-pill tag-default tag-outline"
-                  v-for="tag in article.tagList"
-                  :key="tag"
-                >
-                  {{ tag }}
-                </li>
-              </ul>
-            </nuxt-link>
-          </div>
+          <article-preview :articles="articles" />
         </div>
 
         <div class="col-md-3">
@@ -147,8 +100,9 @@
 </template>
 
 <script>
-import { getArticles, getFeedArticles } from "@/api/article";
+import { getArticles, getFeedArticles, addFavorite, deleteFavorite } from "@/api/article";
 import { getTags } from "@/api/tag";
+import ArticlePreview from '@/components/article-preview'
 
 export default {
   name: "HomeIndex",
@@ -163,21 +117,16 @@ export default {
     const loadArticles =
       store.state.user && tab === "your_feed" ? getFeedArticles : getArticles;
 
-    // const [{ data }, { data: tagData }] = await Promise.all([
-    //   loadArticles({
-    //     limit,
-    //     offset: (page - 1) * limit,
-    //     tag: query.tag,
-    //   }),
-    //   getTags(),
-    // ]);
-    const data = {
-      articles: [],
-      articlesCount: 0
-    }
-    const tagData = {
-      tags: []
-    }
+    const [{ data }, { data: tagData }] = await Promise.all([
+      loadArticles({
+        limit,
+        offset: (page - 1) * limit,
+        tag: query.tag,
+      }),
+      getTags(),
+    ]);
+
+    data.articles.forEach(article => article.favoriteDisabled = false)
 
     return {
       articles: data.articles,
@@ -190,7 +139,7 @@ export default {
     };
   },
 
-  components: {},
+  components: {ArticlePreview},
 
   computed: {
     totalPage() {
@@ -200,7 +149,21 @@ export default {
 
   mounted() {},
 
-  methods: {},
+  methods: {
+    async onFavorite (article) {
+      article.favoriteDisabled = true
+      if (article.favorited) {
+        await deleteFavorite(article.slug)
+        article.favorited = false
+        article.favoritesCount += -1
+      } else {
+        await addFavorite(article.slug)
+        article.favorited = true
+        article.favoritesCount += 1
+      }
+      article.favoriteDisabled = false
+    }
+  },
   watchQuery: ["page", "tag", "tab"],
 };
 </script>

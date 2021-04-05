@@ -1,7 +1,40 @@
 exports.ids = [5];
 exports.modules = {
 
-/***/ 27:
+/***/ 28:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return login; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return register; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "c", function() { return update; });
+/* harmony import */ var _plugins_request__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(5);
+
+const login = data => {
+  return Object(_plugins_request__WEBPACK_IMPORTED_MODULE_0__[/* request */ "b"])({
+    method: 'POST',
+    url: '/api/users/login',
+    data
+  });
+};
+const register = data => {
+  return Object(_plugins_request__WEBPACK_IMPORTED_MODULE_0__[/* request */ "b"])({
+    method: 'POST',
+    url: '/api/users',
+    data
+  });
+};
+const update = data => {
+  return Object(_plugins_request__WEBPACK_IMPORTED_MODULE_0__[/* request */ "b"])({
+    method: 'PUT',
+    url: '/api/user',
+    data
+  });
+};
+
+/***/ }),
+
+/***/ 35:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -15,25 +48,9 @@ var staticRenderFns = []
 
 // CONCATENATED MODULE: ./pages/login/index.vue?vue&type=template&id=5f59132a&scoped=true&
 
-// EXTERNAL MODULE: ./plugins/request.js
-var request = __webpack_require__(5);
+// EXTERNAL MODULE: ./api/user.js
+var user = __webpack_require__(28);
 
-// CONCATENATED MODULE: ./api/user.js
-
-const login = data => {
-  return Object(request["b" /* request */])({
-    method: 'POST',
-    url: '/api/users/login',
-    data
-  });
-};
-const register = data => {
-  return Object(request["b" /* request */])({
-    method: 'POST',
-    url: '/api/users',
-    data
-  });
-};
 // CONCATENATED MODULE: ./node_modules/babel-loader/lib??ref--2-0!./node_modules/vue-loader/lib??vue-loader-options!./pages/login/index.vue?vue&type=script&lang=js&
 //
 //
@@ -129,9 +146,9 @@ const Cookie =  false ? undefined : undefined;
       try {
         const {
           data
-        } = this.isLogin ? await login({
+        } = this.isLogin ? await Object(user["a" /* login */])({
           user: this.user
-        }) : await register({
+        }) : await Object(user["b" /* register */])({
           user: this.user
         }); // 保存用户登陆状态
 
@@ -173,7 +190,7 @@ var component = Object(componentNormalizer["a" /* default */])(
   
 )
 
-/* harmony default export */ var pages_login = __webpack_exports__["default"] = (component.exports);
+/* harmony default export */ var login = __webpack_exports__["default"] = (component.exports);
 
 /***/ })
 

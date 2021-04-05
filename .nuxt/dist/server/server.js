@@ -261,8 +261,8 @@ module.exports = require("vue-no-ssr");
  */
 
 const request = axios__WEBPACK_IMPORTED_MODULE_0___default.a.create({
-  baseURL: 'http://realworld.api.fed.lagounews.com' // baseURL: 'https://conduit.productionready.io'
-
+  // baseURL: 'http://realworld.api.fed.lagounews.com'
+  baseURL: 'https://conduit.productionready.io'
 });
 /* harmony default export */ __webpack_exports__["a"] = (({
   store
@@ -913,7 +913,7 @@ async function setContext(app, context) {
   // If context not defined, create it
   if (!app.context) {
     app.context = {
-      isStatic: false,
+      isStatic: true,
       isDev: false,
       isHMR: false,
       app,
@@ -1503,19 +1503,19 @@ function shouldScrollToTop(route) {
 
 
 
-const _baed42d0 = () => interopDefault(__webpack_require__.e(/* import() */ 4).then(__webpack_require__.bind(null, 28)));
+const _baed42d0 = () => interopDefault(__webpack_require__.e(/* import() */ 7).then(__webpack_require__.bind(null, 34)));
 
-const _83454866 = () => interopDefault(__webpack_require__.e(/* import() */ 3).then(__webpack_require__.bind(null, 26)));
+const _83454866 = () => interopDefault(__webpack_require__.e(/* import() */ 3).then(__webpack_require__.bind(null, 33)));
 
-const _0d86663b = () => interopDefault(__webpack_require__.e(/* import() */ 5).then(__webpack_require__.bind(null, 27)));
+const _0d86663b = () => interopDefault(__webpack_require__.e(/* import() */ 5).then(__webpack_require__.bind(null, 35)));
 
-const _c2a6d80a = () => interopDefault(__webpack_require__.e(/* import() */ 6).then(__webpack_require__.bind(null, 29)));
+const _c2a6d80a = () => interopDefault(__webpack_require__.e(/* import() */ 1).then(__webpack_require__.bind(null, 36)));
 
-const _6fb407de = () => interopDefault(__webpack_require__.e(/* import() */ 7).then(__webpack_require__.bind(null, 30)));
+const _6fb407de = () => interopDefault(__webpack_require__.e(/* import() */ 6).then(__webpack_require__.bind(null, 37)));
 
-const _d28af64a = () => interopDefault(__webpack_require__.e(/* import() */ 2).then(__webpack_require__.bind(null, 31)));
+const _d28af64a = () => interopDefault(__webpack_require__.e(/* import() */ 4).then(__webpack_require__.bind(null, 32)));
 
-const _f5125170 = () => interopDefault(__webpack_require__.e(/* import() */ 1).then(__webpack_require__.bind(null, 32)));
+const _f5125170 = () => interopDefault(__webpack_require__.e(/* import() */ 2).then(__webpack_require__.bind(null, 31)));
 
 const emptyFn = () => {};
 
@@ -2170,6 +2170,10 @@ const layouts = {
 
     isFetching() {
       return this.nbFetching > 0;
+    },
+
+    isPreview() {
+      return Boolean(this.$options.previewData);
     }
 
   },
@@ -2409,6 +2413,7 @@ async function createApp(ssrContext, config = {}) {
 
   const app = {
     head: {
+      "title": "RealWorld",
       "meta": [],
       "link": [],
       "style": [],
@@ -2938,6 +2943,12 @@ const createNext = ssrContext => opts => {
   await beforeRender();
   return _app;
 });
+
+/***/ }),
+/* 26 */
+/***/ (function(module, exports) {
+
+module.exports = require("markdown-it");
 
 /***/ })
 /******/ ]);
